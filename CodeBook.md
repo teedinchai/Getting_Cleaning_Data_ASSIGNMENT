@@ -129,7 +129,7 @@ The meaning of the Variable 3 to Variable 81 can be understood by the same way, 
 
 ## Study design and data processing - Detail of the written R code
 
-#### ---step 1: Merges the training and the test sets to create one data set-
+#### ---**step 1**: Merges the training and the test sets to create one data set---
 ##### download zip file to current working directory and unzip the file
 url <- 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'  
 file <- basename(url)  
