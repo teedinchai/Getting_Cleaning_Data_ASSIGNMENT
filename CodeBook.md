@@ -8,7 +8,7 @@ output: html_document
 ## Project Description
 This project is about the assignment in course3 - Getting and Cleaning Data, offered by John Hopkins University.
 The purpose of this project is to demonstrate our ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for analysis.
-The raw data for this project comes from "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", which is a dataset obtained from Human Activity Recognition Using Smartphones by Universit‡ degli Studi di Genova, Italy.
+The raw data for this project comes from "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", which is a dataset obtained from Human Activity Recognition Using Smartphones by Universit√† degli Studi di Genova, Italy.
 The data are obtained from experiments carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone on the waist. Using its embedded accelerometer and gyroscope, the 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz were captured. The obtained dataset was partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
@@ -34,7 +34,7 @@ kurtosis(): kurtosis of the frequency domain signal
 bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window  
 angle(): Angle between to vectors  
 
-For all the variables in the dataset, it is UNITLESS because of the data are normalized and bounded within [-1,1].
+For all the variables in the dataset, it is **UNITLESS** because of the data are normalized and bounded within [-1,1].
 Therefore, we can ignore the unit during later analysis.
 
 ##Description of the variables in final tidy data set (final_data_PROJECT.txt / Final_Data) file
