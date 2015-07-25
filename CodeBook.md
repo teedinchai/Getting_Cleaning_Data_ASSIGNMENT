@@ -121,7 +121,8 @@ This section describes information about variables in the final tidy data set wh
  - Variable 78 = 'FrequencyBodyGyroscopeMagnitude.meanFreq'
  - Variable 79 = 'FrequencyBodyGyroscopeJerkMagnitude.mean'
  - Variable 80 = 'FrequencyBodyGyroscopeJerkMagnitude.StandardDeviation'
- - Variable 81 = 'FrequencyBodyGyroscopeJerkMagnitude.meanFreq'  
+ - Variable 81 = 'FrequencyBodyGyroscopeJerkMagnitude.meanFreq' 
+  
 class for Variable 3 to Variable 81 are numeric.  
 The data for Variable 3 to Variable 81 are either related to mean or standard deviation of the measurements.
 The meaning of the Variable 3 to Variable 81 can be understood by the following same way, for example, Variable 3 = 'TimeBodyAccelerometer.mean.x.axis', represents the mean value of the time domain signal for body accelerometer along x-axis.
