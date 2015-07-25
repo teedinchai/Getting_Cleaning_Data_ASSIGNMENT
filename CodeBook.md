@@ -15,24 +15,24 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 ##Description of variables in the RAW dataset
 The variables in the database are from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ, body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ), Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ) and magnitude of these three-dimensional signals (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag) in time domain (as denoted by "t"). By using Fast Fourier Transform, the time domain variables are transformed into frequency domain (as indicated by "f") variables as fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag.
 
-The set of variables that were estimated from these signals are: 
-mean(): Mean value
-std(): Standard deviation
-mad(): Median absolute deviation 
-max(): Largest value in array
-min(): Smallest value in array
-sma(): Signal magnitude area
-energy(): Energy measure. Sum of the squares divided by the number of values. 
-iqr(): Interquartile range 
-entropy(): Signal entropy
-arCoeff(): Autorregresion coefficients with Burg order equal to 4
-correlation(): correlation coefficient between two signals
-maxInds(): index of the frequency component with largest magnitude
-meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-skewness(): skewness of the frequency domain signal 
-kurtosis(): kurtosis of the frequency domain signal 
-bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-angle(): Angle between to vectors.
+The set of variables that were estimated from these signals are:   
+mean(): Mean value  
+std(): Standard deviation  
+mad(): Median absolute deviation   
+max(): Largest value in array  
+min(): Smallest value in array  
+sma(): Signal magnitude area  
+energy(): Energy measure. Sum of the squares divided by the number of values   
+iqr(): Interquartile range   
+entropy(): Signal entropy  
+arCoeff(): Autorregresion coefficients with Burg order equal to 4  
+correlation(): correlation coefficient between two signals  
+maxInds(): index of the frequency component with largest magnitude  
+meanFreq(): Weighted average of the frequency components to obtain a mean frequency  
+skewness(): skewness of the frequency domain signal   
+kurtosis(): kurtosis of the frequency domain signal   
+bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window  
+angle(): Angle between to vectors  
 
 For all the variables in the dataset, it is UNITLESS because of the data are normalized and bounded within [-1,1].
 Therefore, we can ignore the unit during later analysis.
@@ -121,10 +121,10 @@ This section describes information about variables in the final tidy data set wh
  - Variable 78 = 'FrequencyBodyGyroscopeMagnitude.meanFreq'
  - Variable 79 = 'FrequencyBodyGyroscopeJerkMagnitude.mean'
  - Variable 80 = 'FrequencyBodyGyroscopeJerkMagnitude.StandardDeviation'
- - Variable 81 = 'FrequencyBodyGyroscopeJerkMagnitude.meanFreq'
-class for Variable 3 to Variable 81 are numeric.
+ - Variable 81 = 'FrequencyBodyGyroscopeJerkMagnitude.meanFreq'  
+class for Variable 3 to Variable 81 are numeric.  
 The data for Variable 3 to Variable 81 are either related to mean or standard deviation of the measurements.
-The meaning of the Variable 3 to Variable 81 can be understood by the same way, for example, Variable 3 = 'TimeBodyAccelerometer.mean.x.axis', represents the mean value of the time domain signal for body accelerometer along x-axis.
+The meaning of the Variable 3 to Variable 81 can be understood by the following same way, for example, Variable 3 = 'TimeBodyAccelerometer.mean.x.axis', represents the mean value of the time domain signal for body accelerometer along x-axis.
 
 
 ## Study design and data processing - Detail of the written R code
