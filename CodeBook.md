@@ -153,8 +153,9 @@ features <- read.table("UCI HAR Dataset/features.txt")
 activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt")
 
 
-######- each Train and Test data has 7352 and 2947 observations respectively    
+######- each Train and Test data has 7352 and 2947 observations respectively  
 ######- row combined train and test data separately first, so that train&test each has 7352+2947 observations 
+######- TDC
 x_train_test <- rbind(x_train,x_test)  
 y_train_test <- rbind(y_train,y_test)  
 subject_train_test <- rbind(subject_train,subject_test)  
