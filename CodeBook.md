@@ -153,30 +153,30 @@ features <- read.table("UCI HAR Dataset/features.txt")
 activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt")
 
 
-######- each Train and Test data has 7352 and 2947 observations respectively, row combined train and test data separately first, so that train & test each has 7352+2947 observations 
-######- TDC
-
-
+######- each Train and Test data has 7352 and 2947 observations respectively, row combined (rbind function)train and test data separately first, so that train & test each has 7352+2947 observations 
+  
 x_train_test <- rbind(x_train,x_test)  
 y_train_test <- rbind(y_train,y_test)  
 subject_train_test <- rbind(subject_train,subject_test)  
 
-######- assign col name to x_train_test with names obtain from "features"
+######- assign column name to x_train_test with names obtain from "features" data
 colnames(x_train_test) <- features[,2]
-#assign col name to y_train_test with names of "activity"
+######- assign column name to y_train_test with names of "activity"
 colnames(y_train_test) <- c("activity")
-#assign col name to subject_train_test with names of "subject"
+######- assign column name to subject_train_test with names of "subject"
 colnames(subject_train_test) <- c("subject")
 
 
-#-----Step 2: Extracts only the measurements on the mean and standard deviation for each measurement.----#
+#### ---Step 2: Extracts only the measurements on the mean and standard deviation for each measurement---
+
+######- use grep() to pattern matching and replacement for extraction of measurements where the variable name consists of "mean" or "std" word.  
 x_train_test_extract <- x_train_test[,grep("mean|std",names(x_train_test))] 
 
-#columns bind the subject, train and test(extracted) data into single data set
+######- columns bind (cbind function) the subject_train_test, y_train_test and x_train_test_extract data sets into single data set consists of 10299 observations and 81 variables.
 subject_train_test_extract <- cbind(subject_train_test,y_train_test,x_train_test_extract)
 
 
-#---Step 3: Uses descriptive activity names to name the activities in the data set-----------------
+#### ---Step 3: Uses descriptive activity names to name the activities in the data set---
 subject_train_test_extract$activity <- activity_labels[subject_train_test_extract$activity,2]
 
 
