@@ -138,13 +138,13 @@ unzip(file)
 
 ######- read Train (x,y & subject) data from files in working directory 
 x_train <- read.table("UCI HAR Dataset/train/X_train.txt")  
-y_train <- read.table("UCI HAR Dataset/train/y_train.txt")                #6 types of activities 
-subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt")    #number of volunteers (total 30)
+y_train <- read.table("UCI HAR Dataset/train/y_train.txt")  
+subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt")      
 
-# ---------- read Test data from files --------------------#
+######- read Test (x,y & subject) data from files in working directory
 x_test <- read.table("UCI HAR Dataset/test/X_test.txt")
-y_test <- read.table("UCI HAR Dataset/test/y_test.txt")              #6 types of activities 
-subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")  #number of volunteers (total 30)
+y_test <- read.table("UCI HAR Dataset/test/y_test.txt")              
+subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")  
 
 # ---------- read features data from file --------------------#
 features <- read.table("UCI HAR Dataset/features.txt")          #Variables of the features
