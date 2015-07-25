@@ -177,11 +177,12 @@ subject_train_test_extract <- cbind(subject_train_test,y_train_test,x_train_test
 
 
 #### ---Step 3: Uses descriptive activity names to name the activities in the data set---
-######- matches the number (1,2,3,4,5,6) in activity to the descriptive name (1=WALKING;2=WALKING_UPSTAIRS;3=WALKING_DOWNSTAIRS;4=SITTING;5=STANDING;6=LAYING) activity_labes file
+######- matches the number (1,2,3,4,5,6) in activity to the descriptive name (1=WALKING; 2=WALKING_UPSTAIRS; 3=WALKING_DOWNSTAIRS; 4=SITTING; 5=STANDING; 6=LAYING) from activity_labes file
 subject_train_test_extract$activity <- activity_labels[subject_train_test_extract$activity,2]
 
 
-#--- Step 4: Appropriately labels the data set with descriptive variable names. 
+#### ---Step 4: Appropriately labels the data set with descriptive variable names---
+######- rename the variable names to more descriptive names with gsub() pattern matching and replacement function. Replace BodyBody, Acc, Gyro, Mag, X, Y, Z, t, f and std to Body, Accelerometer, Gyroscope, Magnitude, x-axis, y-axis, z-axis, Time, Frequency and StandardDeviation, while removing all "()".
 names(subject_train_test_extract) <- gsub("BodyBody", "Body", names(subject_train_test_extract))
 names(subject_train_test_extract) <- gsub("Acc", "Accelerometer", names(subject_train_test_extract))
 names(subject_train_test_extract) <- gsub("Gyro", "Gyroscope", names(subject_train_test_extract))
@@ -195,45 +196,40 @@ names(subject_train_test_extract) <- gsub("^f", "Frequency", names(subject_train
 names(subject_train_test_extract) <- gsub("std", "StandardDeviation", names(subject_train_test_extract))
 
 
-#--- Step 5:From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+#### ---Step 5:From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject---
+######- create second dataset named "Final" which is the same data as "subject_train_test_extract" dataset
 Final <- subject_train_test_extract
 
-#computed the mean for each variable for each activity and each subject
-attach(Final)
-aggdata <-aggregate(Final, by=list(subject,activity), FUN=mean, na.rm=TRUE)
-detach(Final)
-#arrange the subject and activity according to increasing number(1,2,..,30) and alphabet(a,b,..,z)
-aggdata<-aggdata[order(aggdata$Group.1, aggdata$Group.2),]
+######- use aggregate() function to computed the mean for each variable for each activity and each subject. The aggregate () function compute the mean by splits the data according to "subject", and then by "activity".The attach() function attach "Final" dataset to search path for aggregate() function, and detach() the dataset after done.
+attach(Final)  
+aggdata <-aggregate(Final, by=list(subject,activity), FUN=mean, na.rm=TRUE)  
+detach(Final)  
+
+######- arrange the subject and activity according to increasing number(1,2,..,30) and alphabet(a,b,..,z).Noted that the Group.1 and Group.2 variables are created during aggregate() function which are used to reference user how the data are computed for the mean that was split according to "subject" and "activity".
+aggdata <- aggdata[order(aggdata$Group.1, aggdata$Group.2),]
+
+######- in aggregate() function, activity names are in text/word, so, computing the mean of it produces NA. Therefore, replacing back the descriptive activity names into activity variable in the aggdata dataset.
 aggdata$activity <- aggdata$Group.2
-#Set the rownames to NULL to remove them:
+
+######- set the unwanted rownames to NULL to remove them.
 rownames(aggdata) <- NULL  
-#final data by removing unwanted first two columns created during aggregate() function
+
+######- final tidy data by removing unwanted first two columns(variable Group.1 and Group.2) created during aggregate() function. Now, the data consists of 180 observations and 81 Variables.
 Final_Data <- aggdata[,3:ncol(aggdata)]
 
-#Write data into txt file with file name of "final_data_Project"
+#####--------------------------------------------------------------
+
+######- Write Final_Data dataset into text file with file name of "final_data_Project" for submission of assignment
 write.table(Final_Data, "final_data_PROJECT.txt", sep="\t", row.names=FALSE) 
-#to read the saved "final_data_PROJECT.txt" file in Rstudio
+
+#####--------------------------------------------------------------
+
+######- for peer review to read the saved "final_data_PROJECT.txt" file in Rstudio for evaluation
 mydata = read.table("final_data_PROJECT.txt",header = TRUE)
 
 
+#### ---Sources---
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
-###Collection of the raw data
-Description of how the data was collected.
-
-
-##Creating the tidy datafile
-
-###Guide to create the tidy data file
-Description on how to create the tidy data file (1. download the data, ...)/
-
-###Cleaning of the data
-Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
-
-
-##Sources
-Sources you used if any, otherise leave out.
-
-##Annex
-If you used any code in the codebook that had the echo=FALSE attribute post this here (make sure you set the results parameter to 'hide' as you do not want the results to show again)
-
+####- END -
 
