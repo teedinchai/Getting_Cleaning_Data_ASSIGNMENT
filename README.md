@@ -23,7 +23,7 @@ In order to create tidy data with the requirement (dataset with measurement of m
 ######11) RUN code in lines 73-76 to arrange the entire dataset according to increasing number (1,2,..,30 for subject variable) and alphabet(a,b,..,z for activity variable), and remove the unwanted rownames.
 ######12) the final tidy dataset is obtained by RUN code in line 78. The final tidy dataset consists of 180 observations and 81 variables. Verify your output dataset is in the same dimension as mine!
 ######13) finally, write the final tidy dataset into text file (final_data_PROJECT.txt) by RUN code in line 81 and automatic save it into current working directory. :)
-######14) if you want to read back the final_data_PROJECT.txt file, RUN code in line 83, never use Notepad for Window OS.  
+######14) if you want to read back the final_data_PROJECT.txt file, RUN code in line 83, never use Notepad for Window OS to open the text file.  
 
 
 ### Notes
