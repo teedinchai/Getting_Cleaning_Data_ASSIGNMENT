@@ -142,21 +142,22 @@ y_train <- read.table("UCI HAR Dataset/train/y_train.txt")
 subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt")      
 
 ######- read Test (x,y & subject) data from files in working directory
-x_test <- read.table("UCI HAR Dataset/test/X_test.txt")
-y_test <- read.table("UCI HAR Dataset/test/y_test.txt")              
-subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")  
+x_test <- read.table("UCI HAR Dataset/test/X_test.txt")  
+y_test <- read.table("UCI HAR Dataset/test/y_test.txt")                
+subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")    
 
-# ---------- read features data from file --------------------#
-features <- read.table("UCI HAR Dataset/features.txt")          #Variables of the features
+######- read features (variables) data from file in working directory
+features <- read.table("UCI HAR Dataset/features.txt")            
 
-# ---------- read activity_labels data from file --------------------#
+######- read activity_labels data from file in working directory
 activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt")
-#-----------------------------------------------------#
 
-#combined(row) train and test data separately first, so that train&test each has 7352+2947 observations 
-x_train_test <- rbind(x_train,x_test)
-y_train_test <- rbind(y_train,y_test)
-subject_train_test <- rbind(subject_train,subject_test)
+
+######- each Train and Test data has 7352 and 2947 observations respectively
+######- row combined train and test data separately first, so that train&test each has 7352+2947 observations 
+x_train_test <- rbind(x_train,x_test)  
+y_train_test <- rbind(y_train,y_test)  
+subject_train_test <- rbind(subject_train,subject_test)  
 
 #assign col name to x_train_test with names obtain from "features"
 colnames(x_train_test) <- features[,2]
