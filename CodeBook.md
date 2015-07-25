@@ -129,14 +129,14 @@ The meaning of the Variable 3 to Variable 81 can be understood by the same way, 
 
 ## Study design and data processing - Detail of the written R code
 
-#### ---**step 1**: Merges the training and the test sets to create one data set---
-##### download zip file to current working directory and unzip the file
+#### ---step 1: Merges the training and the test sets to create one data set---
+######-download zip file to current working directory and unzip the file
 url <- 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'  
 file <- basename(url)  
 download.file(url, file)  
 unzip(file)  
 
-# ---------- read Train data from files --------------------#
+######-- read Train data from files --
 x_train <- read.table("UCI HAR Dataset/train/X_train.txt")
 y_train <- read.table("UCI HAR Dataset/train/y_train.txt")              #6 types of activities 
 subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt")  #number of volunteers (total 30)
