@@ -177,6 +177,7 @@ subject_train_test_extract <- cbind(subject_train_test,y_train_test,x_train_test
 
 
 #### ---Step 3: Uses descriptive activity names to name the activities in the data set---
+######- matches the number (1,2,3,4,5,6) in activity to the descriptive name (1=WALKING;2=WALKING_UPSTAIRS;3=WALKING_DOWNSTAIRS;4=SITTING;5=STANDING;6=LAYING) activity_labes file
 subject_train_test_extract$activity <- activity_labels[subject_train_test_extract$activity,2]
 
 
