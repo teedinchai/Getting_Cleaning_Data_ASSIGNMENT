@@ -40,7 +40,7 @@ Therefore, we can ignore the unit during later analysis.
 ##Description of the variables in final tidy data set (final_data_PROJECT.txt / Final_Data) file
 This section describes information about variables in the final tidy data set which is available in the data inside "Final_Data" or "final_data_PROJECT.txt".
  - Dimensions of the dataset : 180 rows (observations) and 81 columns (variables)
- - Unit of measurement : Unitless (all data are normalized within [-1,1]!)
+ - Unit of measurement : **Unitless** (all data are normalized within [-1,1]!)
  - Variable 1 = 'subject', class is integer, 30 unique values represent 30 volunteers for the experiment.
  - Variable 2 = 'activity', class is factor, 6 unique characters represent 6 possible motions/activities.
  - Variable 3 = 'TimeBodyAccelerometer.mean.x.axis'
