@@ -74,7 +74,7 @@ aggdata<-aggdata[order(aggdata$Group.1, aggdata$Group.2),]
 aggdata$activity <- aggdata$Group.2
 #Set the rownames to NULL to remove them:
 rownames(aggdata) <- NULL  
-#final data by removing unwanted first two columns created during aggregate() function
+#final data by removing unwanted first two columns (variable Group.1 and variable Group.2)created during aggregate() function
 Final_Data <- aggdata[,3:ncol(aggdata)]
 
 #Write data into txt file with file name of "final_data_Project"
