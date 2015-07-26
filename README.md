@@ -10,7 +10,7 @@ This project is to create tidy data from raw data collected from the acceleromet
 In order to create tidy data with the requirement (dataset with measurement of mean or standard deviation for each variable and each activity for each subject), you can just run the script with file name of "run_analysis.R" and follow the instruction in the next section of this README.md file.  
 
 ## How to RUN the run_analysis.R script
-to run the script, you do not need to type any command, just need to follow the script and run it as listed in the following 14 steps.
+to run the script, you do not need to type any command, just need to follow the script and RUN the codes as listed in the following 14 steps.
 ######1) set your desire working directory with setwd() command
 ######2) copy and paste the run_analysis.R file into the working directory so that you can run the script
 ######3) download and unzip the 59.7MB data file into working directory by RUN code in lines 4-7 of the script
